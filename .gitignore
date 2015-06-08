@@ -13,3 +13,4 @@ logs
 *.gem
 *.rbc
 /.config
+js/.module-cache

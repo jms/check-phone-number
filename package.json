@@ -2,7 +2,6 @@
   "name": "check-phone-number",
   "version": "0.0.1",
   "dependencies": {
-    "google-libphonenumber": "^0.2.2",
     "react-tools": "^0.13.3",
     "semantic-ui": "^1.12.3",
     "world-countries": "^1.7.3"

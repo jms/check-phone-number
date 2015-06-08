@@ -18,7 +18,7 @@ var CountryDropdown = React.createClass({displayName: "CountryDropdown",
   render: function () {
     return (
       React.createElement("div", {className: "ui basic dropdown labeled search icon button"}, 
-        React.createElement("input", {name: "country", type: "hidden"}), 
+        React.createElement("input", {name: "country_code", type: "hidden", id: "country_code"}), 
         React.createElement("i", {className: "world icon"}), 
         React.createElement("span", {className: "text"}, "Select Country"), 
           React.createElement(CountryList, {data: this.state.data})
@@ -32,7 +32,7 @@ var CountryList = React.createClass({displayName: "CountryList",
     var countryNodes = this.props.data.map(function (country, index) {
       var country_code = country.cca2.toLowerCase() + " flag ";
       return (
-        React.createElement("div", {key: index, className: "item", "data-value":  country.callingCode[0]}, 
+        React.createElement("div", {key: index, className: "item", "data-cca2": country.cca2, "data-value":  country.callingCode[0]}, 
           React.createElement("i", {className: country_code}), " ", country.name.common)
       );
     });
@@ -43,7 +43,6 @@ var CountryList = React.createClass({displayName: "CountryList",
     );
   }
 });
-
 
 React.render(
   React.createElement(CountryDropdown, {url: "node_modules/world-countries/dist/countries.json"}),

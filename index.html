@@ -14,30 +14,51 @@
 
     <!-- semantic-ui -->
     <script src="semantic/dist/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" class="ui" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <!-- phone check stuff -->
-    <!--<script src="node_modules/google-libphonenumber/index.js"></script>-->
     <script src="js/phone-checker.js"></script>
+    <script src="js/phone-validation.js"></script>
+    <script src="js/require.js"></script>
 
 
 </head>
 <body>
+<div id="container">
+    <div class="ui grid">
+        <div class="sixteen wide column">
 
-<div class="ui segment">
-    <h1 class="ui header">Check phone number Demo</h1>
-    <div class="ui blue segment">
-        <div class="ui form">
-            <div class="fields">
-                <div id="country" class="field"></div>
-                <div class="field">
-                    <input placeholder="Phone number" type="text">
+            <div class="ui segment">
+                <h3 class="ui header">Check phone number Demo</h3>
+
+                <div class="ui blue segment">
+                    <div class="ui top attached label">Phonenumbers python port of google-libphonenumber</div>
+                    <div class="ui form">
+
+                        <div class="fields">
+                            <div id="country" class="field"></div>
+                            <div class="field">
+                                <input placeholder="Phone number" name="phone" id="phone" type="text">
+                            </div>
+                        </div>
+                        <div class="ui blue submit button">Process phone number</div>
+                        <div class="ui reset button">Reset</div>
+                        <div class="ui error message"></div>
+                    </div>
+                    <div class="ui divider"></div>
+                    <div class="ui inverted segment">
+                        <div class="ui blue top attached label">Results</div>
+                        <p>&nbsp;</p>
+                        <pre id="response_data"></pre>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
 </div>
-
 <!-- components -->
 <script src="js/CountryDropdown.js"></script>
 </body>

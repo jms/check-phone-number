@@ -18,7 +18,7 @@ var CountryDropdown = React.createClass({
   render: function () {
     return (
       <div className="ui basic dropdown labeled search icon button">
-        <input name="country" type="hidden"/>
+        <input name="country_code" type="hidden" id="country_code"/>
         <i className="world icon"></i>
         <span className="text">Select Country</span>
           <CountryList data={this.state.data} />
@@ -32,7 +32,7 @@ var CountryList = React.createClass({
     var countryNodes = this.props.data.map(function (country, index) {
       var country_code = country.cca2.toLowerCase() + " flag ";
       return (
-        <div key={index} className="item" data-value={ country.callingCode[0]}>
+        <div key={index} className="item" data-cca2={country.cca2} data-value={ country.callingCode[0]}>
           <i className={country_code}></i> {country.name.common}</div>
       );
     });
@@ -43,7 +43,6 @@ var CountryList = React.createClass({
     );
   }
 });
-
 
 React.render(
   <CountryDropdown url="node_modules/world-countries/dist/countries.json"/>,
